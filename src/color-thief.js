@@ -1,4 +1,10 @@
 /*
+ * G2 Crowd edits:
+ *
+ * Expose ColorThief to global namespace
+ * Add '.color-thief-helper-canvas' to canvas elements
+ */
+/*
  * Color Thief v2.0
  * by Lokesh Dhakar - http://www.lokeshdhakar.com
  *
@@ -27,6 +33,7 @@
 var CanvasImage = function (image) {
     this.canvas  = document.createElement('canvas');
     this.context = this.canvas.getContext('2d');
+    this.canvas.className = 'color-thief-helper-canvas';
 
     document.body.appendChild(this.canvas);
 
@@ -655,3 +662,5 @@ var MMCQ = (function() {
         quantize: quantize
     };
 })();
+
+module.exports = ColorThief;
